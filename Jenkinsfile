@@ -7,13 +7,22 @@ pipeline {
             }
         }
         stage("Build Artifact") {
-            buildArtifact()
+            sh """
+                echo "Build Artifact"
+            """
+            // buildArtifact()
         }
         stage("Push Artifact") {
-            pushArtifact()
+            sh """
+                echo "Build Artifact"
+            """
+            // pushArtifact()
         }
         stage("Deploy Artifact") {
-            deployArtifact()
+            sh """
+                echo "Build Artifact"
+            """
+            // deployArtifact()
         }
     }
 }

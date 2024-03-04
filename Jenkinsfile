@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Use the name you've given your Maven installation
-        maven 'Maven2' 
+        maven 'Maven3' 
     }
 
     environment {

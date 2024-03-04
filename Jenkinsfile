@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        // Use the name you've given your Maven installation
+        maven 'Maven3' 
+    }
+
     environment {
         // Define environment variables if needed
         NEXUS_CREDENTIALS = credentials('nexus')

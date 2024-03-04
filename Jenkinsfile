@@ -2,12 +2,10 @@ pipeline {
     agent any
 
     tools {
-        // Use the name you've given your Maven installation
         maven 'Maven3' 
     }
 
     environment {
-        // Define environment variables if needed
         NEXUS_CREDENTIALS = credentials('nexus')
     }
 
@@ -19,9 +17,7 @@ pipeline {
         }
         stage("Build Artifact") {
             steps {
-                sh '''
-                    echo "Build Artifact"
-                '''
+                sh 'mvn clean package -DskipTests'
             }
         }
         stage("Push Artifact to Nexus") {
@@ -33,11 +29,9 @@ pipeline {
         }
         stage("Deploy Artifact") {
             steps {
-                sh '''
-                    echo "Deploy Artifact"
-                '''
+                // Replace the echo command with actual deployment commands
+                echo 'Replace this echo command with actual deployment commands'
             }
         }
     }
 }
-

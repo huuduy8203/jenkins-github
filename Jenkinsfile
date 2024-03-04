@@ -41,10 +41,8 @@ pipeline {
 
         stage("Push Artifact to Nexus") {
             steps {
-                script {
-                    // Assuming you're using Maven and the maven deploy command.
-                    sh 'mvn deploy -DskipTests --settings /Users/nguyenhuuduy/Desktop/"My Mac"/Workspace/nexus/nexus-3.65.0-02/system/settings.xml'
-                }
+                configFileProvider([configFile(fileId: '	00c3ceb0-126f-4ba3-82f8-b2593bd5068b', targetLocation: 'settings.xml')]) {
+                    sh 'mvn deploy -DskipTests --settings settings.xml'
             }
         }
     }

@@ -7,22 +7,31 @@ pipeline {
             }
         }
         stage("Build Artifact") {
-            sh """
-                echo "Build Artifact"
-            """
-            // buildArtifact()
+            steps {
+                sh '''
+                    echo "Build Artifact"
+                    // Commands to build the artifact should go here
+                '''
+                // buildArtifact() // Un-comment this line if buildArtifact is a defined method
+            }
         }
         stage("Push Artifact") {
-            sh """
-                echo "Build Artifact"
-            """
-            // pushArtifact()
+            steps {
+                sh '''
+                    echo "Push Artifact"
+                    // Commands to push the artifact should go here
+                '''
+                // pushArtifact() // Un-comment this line if pushArtifact is a defined method
+            }
         }
         stage("Deploy Artifact") {
-            sh """
-                echo "Build Artifact"
-            """
-            // deployArtifact()
+            steps {
+                sh '''
+                    echo "Deploy Artifact"
+                    // Commands to deploy the artifact should go here
+                '''
+                // deployArtifact() // Un-comment this line if deployArtifact is a defined method
+            }
         }
     }
 }

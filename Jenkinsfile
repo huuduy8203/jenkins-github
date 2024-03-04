@@ -41,7 +41,7 @@ pipeline {
 
         stage("Push Artifact to Nexus") {
             steps {
-                configFileProvider([configFile(fileId: '	00c3ceb0-126f-4ba3-82f8-b2593bd5068b', targetLocation: 'settings.xml')]) {
+                configFileProvider([configFile(fileId: '00c3ceb0-126f-4ba3-82f8-b2593bd5068b', targetLocation: 'settings.xml')]) {
                     sh 'mvn deploy -DskipTests --settings settings.xml'
                 }
             }
